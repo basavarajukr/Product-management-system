@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/index.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/solid.min.css" integrity="sha512-jQqzj2vHVxA/yCojT8pVZjKGOe9UmoYvnOuM/2sQ110vxiajBU+4WkyRs1ODMmd4AfntwUEV4J+VfM6DkfjLRg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>Shop 360</title>
+</head>
+<body>
+
+    <div class="toast" id="toast" onclick="hideToast()">
+        
+    </div>
+
+    <div class="leftpanel" id="filterpanel">
+        <div style="padding: 30px;display: flex;flex-direction: column;">
+            <h1 style="font-size: 27px;">Product Filters</h1>
+            <form id="filterform">
+            <div class="panel_child">
+                <p>Search Name</p>
+                <p><input type="text" class="filterinput" id="name" placeholder="Enter name" onkeyup="filter('nameFilter',this.value)"></p>
+            </div>
+
+            <div class="panel_child">
+                <p>Filter By Rating</p>
+                <p><input type="number" class="filterinput" name="" id="min-rating" placeholder="Min rating" onkeyup="filter('minRatingFilter',this.value)"></p>
+                <p><input type="number" class="filterinput" name="" id="max-rating" placeholder="Max rating" onkeyup="filter('maxRatingFilter',this.value)"></p>
+
+            </div>
+
+            <div class="panel_child">
+                <p>Filter By Price</p>
+                <p><input type="number" class="filterinput" name="" id="min-price" placeholder="Min price" onkeyup="filter('minPriceFilter',this.value)"></p>
+                <p><input type="number" class="filterinput" name="" id="max-price" placeholder="Max price" onkeyup="filter('maxPriceFilter',this.value)"></p>
+            </div>
+
+            <div class="panel_child">
+                <button style="width: 100%; margin-top: 5px;" class="btn" onclick="openFilterPanel(false)">Close</button>
+                <button style="width: 100%; margin-top: 5px;" class="btn" onclick="clearFilters()">Clear All Filters</button>
+            </div>
+            </form>
+
+        </div>
+    </div>
+    
+    <div class="modal" id="modal" onclick="closeProduct(event)">
+
+        <div class="singleproduct">
+            <div class="singlepro-img">
+                <img src="https://assets.myntassets.com/dpr_1.5,q_60,w_400,c_limit,fl_progressive/assets/images/productimage/2021/2/18/07b7a314-decd-421a-b447-01b2411e24e61613643428870-1.jpg" id="singlepro-img" alt="">
+            </div>
+            <div class="singlepro-details">
+                <div style="padding: 20px;">
+                <h1 id="singlepro-name">Black Top Female</h1>
+                <h2 id="singlepro-price">$ 999</h2>
+
+                <div class="rate" style="margin-bottom: 0;">
+                    <div class="gray-star-rate">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <div class="gold-star-rate" id="gold-star-rate">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                </div>
+                <p id="noof-rating"> ( 245 ) </p>
+                <p id="singlepro-category">Clothing</p>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae ex laborum rem similique delectus voluptates optio tenetur illo! Deserunt cum.</p>
+                <p><button class="btn">Add to cart</button></p>
+                <h2>Rate the product</h2>
+                <div class="userrating">
+                    <i class="fas fa-star user-rate" onmouseover="selectRating(1)" onclick="rateProduct(1)" onmouseout="clearStar()"></i>
+                    <i class="fas fa-star user-rate" onmouseover="selectRating(2)" onclick="rateProduct(2)" onmouseout="clearStar()"></i>
+                    <i class="fas fa-star user-rate" onmouseover="selectRating(3)" onclick="rateProduct(3)" onmouseout="clearStar()"></i>
+                    <i class="fas fa-star user-rate" onmouseover="selectRating(4)" onclick="rateProduct(4)" onmouseout="clearStar()"></i>
+                    <i class="fas fa-star user-rate" onmouseover="selectRating(5)" onclick="rateProduct(5)" onmouseout="clearStar()"></i>
+                </div>
+
+                <div class="side_images" id="side_images"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="header">
+        <div class="container header_container">
+            <div class="logo">
+                Shop 360
+            </div>
+            <div class="right">
+            <div class="filteraction" onclick="openFilterPanel(true)">
+                Filters
+            </div>
+            <div class="filteraction">
+                <a href="cart.html">Cart</a>
+            </div>
+            </div>
+
+        </div>
+    </div>
+
+    <div class="products">
+        <div class="container" id="product_container">
+
+        </div>
+    </div>
+
+
+    <script src="./js/index.js"></script>
+</body>
+</html>

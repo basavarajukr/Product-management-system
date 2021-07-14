@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>PMS - admin</title>
+    <link rel="stylesheet" href="./css/admin.css">
+</head>
+<body>
+
+    <div class="modal closemodal" id="add_modal" onclick="toggleAddModal(event)">
+        <div class="modal-container">
+            <div class="padd">
+                <div class="form-container">
+            <h2>Add Products</h2>
+            <form action="" id="add_form">
+            <div class="form">
+                
+                <div class="inp">
+                    <input type="text" placeholder="name" id="add_name">
+                </div>
+                <div class="inp">
+                    <input type="text" placeholder="price" id="add_price">
+                </div>
+                <div class="inp">
+                    <input type="text" placeholder="category" id="add_category">
+                </div>
+                <div class="inp" style="display: flex; align-items: center;">
+                    <p style="color: gray; font-size: 18px; padding-bottom: 10px; width: 80%;">Select color</p>
+                    <input type="color" placeholder="name" id="add_color">
+                </div>
+                <div class="inp" style="width: 100%;">
+                    <input type="text" placeholder="imageurl" id="add_imageurl">
+                </div>
+
+                <div class="inp" style="width: 100%;">
+                    <input type="text" placeholder="side image URL seperated by ( , )" id="sideimage-urls">
+                </div>
+
+                <div class="inp" style="display: flex;width: 100%; justify-content: space-between;">
+                    <button class="btn btn-add" type="button" onclick="addProduct()">Add Product</button>
+                    <button class="btn close closemodal" type="button" onclick="toggleAddModal(event)">Close</button>
+
+                </div>
+            </div>
+            </form>
+
+            </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal closemodal" id="update_modal" onclick="toggleUpdateModal(event)">
+        <div class="modal-container">
+            <div class="padd">
+                <div class="form-container">
+            <h2>Update Products</h2>
+            <form action="" id="add_form">
+            <div class="form">
+                <div class="inp">
+                    <input type="text" placeholder="name" id="update_name">
+                </div>
+                <div class="inp">
+                    <input type="text" placeholder="price" id="update_price">
+                </div>
+                <div class="inp">
+                    <input type="text" placeholder="category" id="update_category">
+                </div>
+                <div class="inp" style="display: flex; align-items: center;">
+                    <p style="color: gray; font-size: 18px; padding-bottom: 10px; width: 80%;">Select color</p>
+                    <input type="color" placeholder="name" id="update_color">
+                </div>
+                <div class="inp" style="width: 100%;">
+                    <input type="text" placeholder="imageurl" id="update_imageurl">
+                </div>
+
+                <div class="inp" style="width: 100%;">
+                    <input type="text" placeholder="side image URL seperated by ( , )" id="update_sideimage_urls">
+                </div>
+
+                <div class="inp" style="display: flex;width: 100%; justify-content: space-between;">
+                    <button class="btn btn-add" type="button" onclick="updateProduct()">Update Product</button>
+                    <button class="btn close closemodal" type="button" onclick="toggleUpdateModal(event)">Close</button>
+                </div>
+            </div>
+            </form>
+            </div>
+            </div>
+        </div>
+    </div>
+
+    
+    <div class="container">
+
+        <div class="padd">
+
+        <div class="container-header">
+        <h1>All products</h1>
+        <button class="btn btn-add add-modal" onclick="toggleAddModal(event)">Add Product</button>
+        </div>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>#</th>
+                    <th>ID</th>
+                    <th>Name</th>
+                    <th>Price</th>
+                    <th>Category</th>
+                    <th>Color</th>
+                    <th>Rating</th>
+                    <th>Actions</th>
+
+                </tr>
+            </thead>
+            <tbody id="data">
+
+            </tbody>
+        </table>
+
+
+
+
+
+    </div>
+    </div>
+
+    <script src="./js/admin.js">
+
+    </script>
+</body>
+</html>

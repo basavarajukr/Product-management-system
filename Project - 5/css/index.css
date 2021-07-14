@@ -1,0 +1,354 @@
+* {
+  margin: 0px;
+  padding: 0px;
+}
+
+/* font family  */
+@import url("https://fonts.googleapis.com/css2?family=Fira+Sans:ital,wght@1,500&display=swap");
+
+.container {
+  width: 80%;
+  margin-left: 10%;
+}
+
+a {
+  color: white;
+  text-decoration: none;
+}
+
+.filteraction:hover > a {
+  color: #720b9c;
+}
+
+.leftpanel {
+  height: 100vh;
+  width: 20%;
+  background-color: white;
+  position: fixed;
+  margin-left: -20%;
+  transition: 0.5s;
+  box-shadow: 0 0 10px gray;
+  font-family: "Segoe UI";
+}
+
+.panel_child {
+  width: 100%;
+  /* background-color: gray; */
+  margin-top: 20px;
+}
+
+.panel_child > p {
+  margin: 10px;
+}
+
+.filterinput {
+  height: 30px;
+  width: 100%;
+  font-size: 16px;
+  text-indent: 20px;
+  box-sizing: border-box;
+  border-radius: 5px;
+  border: 1px solid gray;
+  outline: none;
+}
+
+.filterinput:focus {
+  box-shadow: 0 0 3px #720b9c;
+}
+
+.modal {
+  height: 100vh;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.6);
+  position: fixed;
+  z-index: 10;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  display: none;
+}
+
+.singleproduct {
+  width: 50%;
+  height: 500px;
+  background-color: white;
+  display: flex;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.singlepro-img {
+  width: 45%;
+  height: 100%;
+  /* background-color: red; */
+  display: flex;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.singlepro-img > img {
+  width: 132%;
+}
+
+.singlepro-details {
+  width: 55%;
+  height: 100%;
+  /* background-color: green; */
+  font-family: "Segoe UI";
+}
+
+.singlepro-details h1,
+.singlepro-details h2,
+.singlepro-details p {
+  margin-bottom: 10px;
+}
+
+.singlepro-details h1 {
+  font-size: 27px;
+}
+
+.rate {
+  height: 20px;
+  width: 91px;
+  /* background-color: red; */
+  margin-bottom: 10px;
+  position: relative;
+}
+
+.gray-star-rate {
+  height: 20px;
+  width: 100%;
+  /* background-color: green; */
+  position: absolute;
+  display: flex;
+  color: gray;
+}
+
+.gold-star-rate {
+  height: 20px;
+  width: 0%;
+  /* background-color: gold; */
+  position: absolute;
+  display: flex;
+  color: gold;
+  overflow: hidden;
+}
+
+.userrating {
+  width: 91px;
+  height: 20px;
+  display: flex;
+  color: gray;
+  margin-bottom: 10px;
+  /* background-color: red; */
+}
+
+.side_images {
+  width: 100%;
+  height: 90px;
+  /* background-color: red; */
+}
+
+.side_image {
+  height: 90px;
+  margin-right: 10px;
+}
+
+.header {
+  height: 80px;
+  width: 100%;
+  background-color: #720b9c;
+}
+
+.logo {
+  height: 80px;
+  width: 17%;
+  /* background-color: gray; */
+  font-size: 40px;
+  color: white;
+  font-family: "Fira Sans", sans-serif;
+  line-height: 80px;
+  text-align: center;
+  font-weight: 100;
+}
+
+.header_container {
+  display: flex;
+  justify-content: space-between;
+}
+
+.right {
+  width: 20%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.filteraction {
+  height: 80px;
+  padding-left: 10px;
+  padding-right: 10px;
+  /* background-color: red; */
+  color: white;
+  font-family: "Segoe UI";
+  font-size: 30px;
+  text-align: center;
+  line-height: 80px;
+  cursor: pointer;
+  transition: 0.4s;
+}
+
+.filteraction:hover {
+  background-color: white;
+  color: #720b9c;
+}
+
+.toast {
+  width: 20%;
+  height: 50px;
+  background-color: gray;
+  position: fixed;
+  z-index: 1000;
+  top: 5vh;
+  left: 80%;
+  border-radius: 10px;
+  display: none;
+  align-items: center;
+  font-family: "Segoe UI";
+  justify-content: center;
+  font-weight: bold;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+.quantity {
+  margin-bottom: 10px;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.quantity-btn {
+  font-size: 25px;
+  font-weight: bold;
+  width: 15%;
+}
+
+.quantity > span {
+  font-weight: bold;
+  font-size: 20px;
+}
+
+.products {
+  padding-top: 50px;
+  padding-bottom: 50px;
+  /* background-color: red; */
+  display: flex;
+  font-size: 0;
+}
+
+.product {
+  width: 30%;
+  /* background-color: gray; */
+  margin-left: 25px;
+  display: inline-block;
+  box-shadow: 0 0 2px gray;
+  border-radius: 10px;
+  overflow: hidden;
+  margin-top: 25px;
+}
+
+.pro-img {
+  height: 200px;
+  width: 100%;
+  overflow: hidden;
+  /* background-color: rgb(53, 53, 52); */
+}
+
+.pro-img > img {
+  width: 100%;
+}
+
+.category {
+  width: 30%;
+  border-radius: 10px;
+  text-align: center;
+  height: 20px;
+  line-height: 20px;
+  font-weight: bold;
+  background-color: #deb3ec;
+  color: black !important;
+}
+
+.pro-details {
+  padding: 15px;
+  font-size: 14px;
+  font-family: "Segoe UI";
+}
+
+.rate-title {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 5px;
+}
+
+.pro-details > h2 {
+  margin-bottom: 5px;
+}
+
+.pro-details > p > button,
+.btn {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 10px;
+  padding-right: 10px;
+  font-size: 14px;
+  text-transform: uppercase;
+  color: white;
+  border: none;
+  outline: none;
+  border-radius: 10px;
+  background-color: #720b9c;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.pro-details > p > button:hover,
+.btn:hover {
+  background-color: #ae3cdc;
+}
+
+.pro-details > p {
+  color: gray;
+  margin-bottom: 10px;
+}
+
+.rating {
+  width: 101px;
+  height: 20px;
+  position: relative;
+}
+
+.gray-star {
+  /* width: 100%; */
+  height: 20px;
+  /* background-color: red; */
+  color: gray;
+  position: absolute;
+  overflow: hidden;
+  display: flex;
+  font-size: 18px;
+}
+
+.golden-star {
+  /* width: 50%; */
+  height: 20px;
+  font-size: 18px;
+  /* background-color: green; */
+  color: gold;
+  position: absolute;
+  overflow: hidden;
+  white-space: nowrap;
+  display: flex;
+}
